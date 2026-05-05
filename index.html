@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Twyllos Consulting Limited — A dependable vehicle for fostering value creation and efficient delivery across Africa's organizational landscape. Project Management, Stakeholder Engagement, Policy Research & Advisory, Business Development."/>
+  <meta name="keywords" content="Twyllos Consulting, management consulting Nigeria, project management Africa, stakeholder engagement, policy advisory, business development, Abuja, Lagos"/>
+  <meta property="og:title" content="Twyllos Consulting Limited | Strategy · Efficiency · Impact"/>
+  <meta property="og:description" content="A dependable vehicle for fostering value creation and efficient delivery across Africa's organizational landscape."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.twyllosconsulting.com"/>
+  <title>Twyllos Consulting Limited | Strategy · Efficiency · Impact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       DESIGN TOKENS — from the PPTX palette
+    ═══════════════════════════════════════════════════════ */
+    :root {
+      --maroon:       #6B1A2A;
+      --deep-maroon:  #4A0E1A;
+      --dark-maroon:  #3A0A14;
+      --gold:         #C9A84C;
+      --light-gold:   #E8C97A;
+      --pale-gold:    #F2E0A8;
+      --cream:        #FAF3E0;
+      --beige:        #EAD9B8;
+      --lt-beige:     #F5EDDA;
+      --earth:        #7A5C44;
+      --dark-earth:   #5A3C28;
+      --charcoal:     #2C1810;
+      --ease:         cubic-bezier(0.22,1,0.36,1);
+      --nav-h:        78px;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════════════════════ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
+    ::selection{background:var(--gold);color:var(--dark-maroon)}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--dark-maroon)}
+    ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+    /* ═══════════════════════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════════════════════ */
+    .wrap{max-width:1240px;margin:0 auto;padding:0 44px}
+    .tag{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--gold)}
+    .gold-bar{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--light-gold));margin:14px 0 22px}
+    .gold-bar.c{margin:14px auto 22px}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.on{opacity:1;transform:none}
+
+    /* ═══════════════════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════════════════ */
+    #nav{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      height:var(--nav-h);display:flex;align-items:center;
+      transition:background .4s,backdrop-filter .4s,box-shadow .4s;
+    }
+    #nav.s{
+      background:rgba(58,10,20,0.97);
+      backdrop-filter:blur(12px);
+      box-shadow:0 2px 32px rgba(0,0,0,.35);
+    }
+    #nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+
+    .logo{display:flex;flex-direction:column;gap:1px;line-height:1}
+    .logo-w{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;letter-spacing:5px;color:var(--gold)}
+    .logo-s{font-family:'Lato',sans-serif;font-size:8px;font-weight:300;letter-spacing:7px;text-transform:uppercase;color:var(--beige)}
+
+    .nav-ul{display:flex;align-items:center;gap:30px;list-style:none}
+    .nav-ul a{
+      font-family:'Lato',sans-serif;font-size:11px;font-weight:400;
+      letter-spacing:2px;text-transform:uppercase;color:var(--beige);
+      position:relative;padding-bottom:3px;transition:color .3s;
+    }
+    .nav-ul a::after{
+      content:'';position:absolute;bottom:0;left:0;
+      width:0;height:1px;background:var(--gold);
+      transition:width .3s var(--ease);
+    }
+    .nav-ul a:hover{color:var(--gold)}
+    .nav-ul a:hover::after{width:100%}
+    .nav-cta{
+      background:var(--gold)!important;color:var(--dark-maroon)!important;
+      padding:10px 22px!important;font-weight:700!important;
+      letter-spacing:1.5px!important;transition:background .3s,transform .2s!important;
+    }
+    .nav-cta:hover{background:var(--light-gold)!important;transform:translateY(-1px)}
+    .nav-cta::after{display:none!important}
+
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+    .burger span{display:block;width:23px;height:1.5px;background:var(--gold);transition:.3s}
+    .mob{
+      display:none;position:fixed;top:var(--nav-h);left:0;right:0;
+      background:var(--dark-maroon);border-top:1px solid rgba(201,168,76,.15);
+      padding:20px 44px;z-index:999;
+    }
+    .mob.o{display:block}
+    .mob a{display:block;padding:13px 0;font-family:'Lato',sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--beige);border-bottom:1px solid rgba(201,168,76,.1);transition:color .3s}
+    .mob a:hover{color:var(--gold)}
+
+    /* ═══════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════ */
+    #hero{
+      min-height:100vh;background:var(--dark-maroon);
+      position:relative;overflow:hidden;
+      display:flex;align-items:center;
+    }
+    /* Diamond tessellation background */
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-bg svg{width:100%;height:100%;opacity:.9}
+
+    /* Right-side accent triangle */
+    .hero-tri{
+      position:absolute;right:0;top:0;bottom:0;width:42%;
+      pointer-events:none;overflow:hidden;
+    }
+    .hero-tri svg{width:100%;height:100%}
+
+    .hero-body{position:relative;z-index:2;width:100%;padding:calc(var(--nav-h) + 60px) 0 80px}
+    .hero-eyebrow{
+      font-family:'Lato',sans-serif;font-size:10px;font-weight:700;
+      letter-spacing:5px;text-transform:uppercase;color:var(--gold);
+      display:flex;align-items:center;gap:14px;margin-bottom:22px;
+    }
+    .hero-eyebrow::before{content:'';width:36px;height:1.5px;background:var(--gold);flex-shrink:0}
+
+    .hero-h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(42px,6.5vw,80px);font-weight:400;line-height:1.1;
+      color:var(--cream);max-width:740px;margin-bottom:10px;
+    }
+    .hero-h1 em{font-style:italic;color:var(--light-gold)}
+    .hero-h1 strong{font-weight:700}
+
+    .hero-limited{
+      font-family:'Lato',sans-serif;font-size:11px;font-weight:700;
+      letter-spacing:8px;text-transform:uppercase;
+      color:rgba(201,168,76,.55);margin-bottom:28px;
+    }
+
+    .hero-sub{
+      font-family:'EB Garamond',serif;font-size:19px;font-weight:400;
+      color:var(--beige);line-height:1.7;max-width:600px;margin-bottom:16px;
+    }
+    .hero-tagline{
+      font-family:'Lato',sans-serif;font-size:11px;font-weight:300;
+      letter-spacing:3px;color:rgba(234,217,184,.5);margin-bottom:44px;
+    }
+
+    .hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px}
+    .btn-p{
+      display:inline-flex;align-items:center;gap:9px;
+      background:var(--gold);color:var(--dark-maroon);
+      font-family:'Lato',sans-serif;font-size:10.5px;font-weight:700;
+      letter-spacing:2px;text-transform:uppercase;padding:15px 34px;
+      transition:background .3s,transform .2s;
+    }
+    .btn-p:hover{background:var(--light-gold);transform:translateY(-2px)}
+    .btn-s{
+      display:inline-flex;align-items:center;gap:9px;
+      border:1px solid rgba(201,168,76,.4);color:var(--beige);
+      font-family:'Lato',sans-serif;font-size:10.5px;font-weight:400;
+      letter-spacing:2px;text-transform:uppercase;padding:15px 34px;
+      transition:border-color .3s,color .3s;
+    }
+    .btn-s:hover{border-color:var(--gold);color:var(--gold)}
+
+    .hero-stats{
+      display:flex;gap:52px;flex-wrap:wrap;
+      padding-top:40px;border-top:1px solid rgba(201,168,76,.15);
+    }
+    .hs-val{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold);line-height:1}
+    .hs-lbl{font-family:'Lato',sans-serif;font-size:10px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:var(--beige);margin-top:6px}
+
+    .scroll-cue{
+      position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+      display:flex;flex-direction:column;align-items:center;gap:7px;
+      cursor:pointer;z-index:2;
+    }
+    .scroll-cue span{font-family:'Lato',sans-serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+    .scroll-line{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);animation:sp 2s ease-in-out infinite}
+    @keyframes sp{0%,100%{opacity:.35;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.12)}}
+
+    /* ═══════════════════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════════════════ */
+    #about{padding:112px 0;background:var(--cream);position:relative}
+    #about::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--gold),var(--maroon))}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+    .about-h{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);font-weight:400;line-height:1.2;color:var(--deep-maroon);margin-bottom:22px}
+    .about-p{font-family:'Lato',sans-serif;font-size:15px;font-weight:300;line-height:1.85;color:var(--earth);margin-bottom:14px}
+
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .stat-box{padding:32px 26px;position:relative;overflow:hidden}
+    .stat-box::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+    .stat-box:nth-child(1){background:var(--deep-maroon)}
+    .stat-box:nth-child(2){background:var(--maroon)}
+    .stat-box:nth-child(3){background:var(--maroon)}
+    .stat-box:nth-child(4){background:var(--earth)}
+    .sb-v{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1}
+    .sb-l{font-family:'Lato',sans-serif;font-size:11px;font-weight:300;letter-spacing:1.5px;text-transform:uppercase;color:var(--beige);margin-top:7px}
+
+    /* ═══════════════════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════════════════ */
+    #services{padding:112px 0;background:var(--deep-maroon);position:relative;overflow:hidden}
+    #services::before{content:'';position:absolute;top:-100px;right:-100px;width:440px;height:440px;border:1px solid rgba(201,168,76,.05);border-radius:50%;pointer-events:none}
+    #services::after{content:'';position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border:1px solid rgba(201,168,76,.04);border-radius:50%;pointer-events:none}
+
+    .svc-hdr{text-align:center;margin-bottom:64px}
+    .svc-hdr .tag{color:var(--light-gold)}
+    .svc-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);font-weight:400;color:var(--cream);margin-top:4px}
+
+    /* 4 core cards — 2 column grid */
+    .core-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:2px}
+    .sc{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(201,168,76,.1);
+      padding:42px 38px;position:relative;overflow:hidden;
+      transition:background .4s,border-color .4s,transform .3s;cursor:default;
+    }
+    .sc:hover{background:rgba(201,168,76,.05);border-color:rgba(201,168,76,.32);transform:translateY(-4px)}
+    .sc::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+    .sc:hover::before{transform:scaleY(1)}
+
+    .sc-ico{width:50px;height:50px;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .3s}
+    .sc:hover .sc-ico{background:rgba(201,168,76,.18)}
+    .sc-ico svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.6}
+
+    .sc-tag{font-family:'Lato',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--light-gold);margin-bottom:7px}
+    .sc-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--cream);margin-bottom:14px;line-height:1.3}
+    .sc-desc{font-family:'Lato',sans-serif;font-size:13.5px;font-weight:300;line-height:1.78;color:var(--beige);margin-bottom:18px}
+    .sc-pills{display:flex;flex-wrap:wrap;gap:7px}
+    .pill{font-family:'Lato',sans-serif;font-size:9.5px;letter-spacing:1px;color:var(--pale-gold);border:1px solid rgba(201,168,76,.22);padding:3px 9px}
+
+    /* 4 additional cards */
+    .add-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+    .ac{background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.07);padding:34px 26px;transition:background .4s,border-color .4s}
+    .ac:hover{background:rgba(201,168,76,.04);border-color:rgba(201,168,76,.22)}
+    .ac .sc-ico{margin-bottom:14px}
+    .ac-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--cream);margin-bottom:14px;line-height:1.3}
+    .ac-list{list-style:none}
+    .ac-list li{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;color:var(--beige);padding:6px 0;border-bottom:1px solid rgba(201,168,76,.07);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+    .ac-list li::before{content:'';width:3px;height:3px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:7px}
+
+    /* ═══════════════════════════════════════════════════════
+       METHODOLOGY
+    ═══════════════════════════════════════════════════════ */
+    #method{padding:112px 0;background:var(--cream)}
+    .mth-hdr{margin-bottom:64px}
+    .mth-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);color:var(--deep-maroon)}
+
+    .steps-row{display:grid;grid-template-columns:repeat(5,1fr);position:relative;gap:0}
+    .steps-row::before{content:'';position:absolute;top:48px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--gold),var(--light-gold),var(--gold));z-index:0}
+
+    .step{padding:0 14px;text-align:center;position:relative;z-index:1}
+    .step-num{width:62px;height:62px;background:var(--maroon);border:2.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--gold)}
+    .step-t{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--deep-maroon);margin-bottom:10px}
+    .step-d{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;line-height:1.72;color:var(--earth)}
+
+    .attrs-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:44px}
+    .attr{background:var(--deep-maroon);padding:26px 22px;border-top:3px solid var(--gold)}
+    .attr-t{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);margin-bottom:8px}
+    .attr-d{font-family:'Lato',sans-serif;font-size:12px;font-weight:300;line-height:1.65;color:var(--beige)}
+
+    /* ═══════════════════════════════════════════════════════
+       WHY US
+    ═══════════════════════════════════════════════════════ */
+    #why{padding:112px 0;background:var(--dark-maroon)}
+    .why-hdr{text-align:center;margin-bottom:64px}
+    .why-hdr .tag{color:var(--light-gold)}
+    .why-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);font-weight:400;color:var(--cream)}
+
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .wc{border:1px solid rgba(201,168,76,.11);padding:38px 30px;position:relative;transition:border-color .4s,transform .3s}
+    .wc:hover{border-color:rgba(201,168,76,.38);transform:translateY(-4px)}
+    .wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+    .wc:hover::after{transform:scaleX(1)}
+    .wc-n{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:rgba(201,168,76,.1);line-height:1;margin-bottom:14px}
+    .wc-t{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:12px;line-height:1.3}
+    .wc-d{font-family:'Lato',sans-serif;font-size:13.5px;font-weight:300;line-height:1.78;color:var(--beige)}
+
+    /* ═══════════════════════════════════════════════════════
+       FOUNDER
+    ═══════════════════════════════════════════════════════ */
+    #founder{padding:112px 0;background:var(--lt-beige);position:relative;overflow:hidden}
+    #founder::before{content:'FOUNDER';position:absolute;right:-30px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:'Playfair Display',serif;font-size:110px;font-weight:700;color:rgba(107,26,42,.04);pointer-events:none;white-space:nowrap;letter-spacing:18px}
+
+    .fnd-grid{display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:start}
+
+    .fnd-left{position:relative}
+    .fnd-portrait{
+      width:100%;aspect-ratio:3/4;background:var(--maroon);
+      position:relative;overflow:hidden;
+    }
+    .fnd-initials-block{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+    .fnd-initials{font-family:'Playfair Display',serif;font-size:68px;font-weight:700;color:var(--gold);line-height:1}
+    .fnd-initials-label{font-family:'Lato',sans-serif;font-size:9px;font-weight:300;letter-spacing:5px;text-transform:uppercase;color:var(--beige)}
+    .fnd-badge{position:absolute;bottom:0;left:0;right:0;background:var(--gold);padding:14px 22px}
+    .fnd-badge-role{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--deep-maroon);margin-bottom:3px}
+    .fnd-badge-name{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark-maroon)}
+    .fnd-corner{position:absolute;top:-14px;right:-14px;width:72px;height:72px;border:2.5px solid var(--gold)}
+
+    .fnd-right{}
+    .fnd-right .tag{color:var(--gold)}
+    .fnd-right h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,36px);font-weight:400;line-height:1.25;color:var(--deep-maroon);margin-top:4px}
+
+    .fnd-bio{font-family:'EB Garamond',serif;font-size:17.5px;font-weight:400;line-height:1.82;color:var(--earth);margin:22px 0 28px;border-left:3px solid var(--gold);padding-left:22px}
+
+    .creds{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+    .cred{display:flex;align-items:flex-start;gap:12px;font-family:'Lato',sans-serif;font-size:13px;font-weight:300;color:var(--earth)}
+    .cred::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+    .cred strong{font-weight:700;color:var(--maroon)}
+
+    .fnd-passions{background:var(--deep-maroon);padding:22px 26px;border-left:4px solid var(--gold)}
+    .fnd-passions p{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;line-height:1.75;color:var(--beige)}
+    .fnd-passions strong{color:var(--light-gold);font-weight:400}
+
+    /* ═══════════════════════════════════════════════════════
+       PROJECTS
+    ═══════════════════════════════════════════════════════ */
+    #projects{padding:112px 0;background:var(--maroon)}
+    .proj-hdr{margin-bottom:56px}
+    .proj-hdr .tag{color:var(--light-gold)}
+    .proj-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);color:var(--cream)}
+
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .pc{
+      background:rgba(0,0,0,.18);padding:34px 30px;
+      border-bottom:3px solid transparent;
+      transition:border-color .3s,background .3s,transform .3s;
+    }
+    .pc:hover{background:rgba(0,0,0,.32);border-bottom-color:var(--gold);transform:translateY(-3px)}
+
+    .pc-sector{font-family:'Lato',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--light-gold);margin-bottom:8px}
+    .pc-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--cream);margin-bottom:6px;line-height:1.3}
+    .pc-client{font-family:'Lato',sans-serif;font-size:10.5px;color:var(--light-gold);font-weight:700;letter-spacing:.8px;margin-bottom:14px}
+    .pc-desc{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;line-height:1.72;color:var(--beige);margin-bottom:18px}
+    .pc-outcome{background:rgba(201,168,76,.1);border-left:3px solid var(--gold);padding:9px 13px;font-family:'Lato',sans-serif;font-size:11.5px;font-weight:700;color:var(--pale-gold);letter-spacing:.3px}
+
+    /* ═══════════════════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════════════════ */
+    #testi{padding:112px 0;background:var(--cream)}
+    .testi-hdr{text-align:center;margin-bottom:64px}
+    .testi-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);color:var(--deep-maroon)}
+
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .tc{background:var(--lt-beige);padding:38px 34px;border-top:4px solid var(--gold)}
+    .tc-qm{font-family:'Playfair Display',serif;font-size:72px;color:var(--gold);line-height:.6;margin-bottom:18px;opacity:.55}
+    .tc-body{font-family:'EB Garamond',serif;font-size:17.5px;font-style:italic;line-height:1.72;color:var(--earth);margin-bottom:24px}
+    .tc-div{width:36px;height:2px;background:var(--gold);margin-bottom:16px}
+    .tc-who{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:700;color:var(--maroon);letter-spacing:.3px}
+    .tc-org{font-family:'Lato',sans-serif;font-size:11px;font-weight:300;color:var(--earth);margin-top:3px}
+
+    .testi-nums{display:flex;justify-content:center;gap:72px;margin-top:64px;padding-top:48px;border-top:1px solid var(--beige);text-align:center;flex-wrap:wrap}
+    .tn-v{font-family:'Playfair Display',serif;font-size:38px;color:var(--maroon);font-weight:700}
+    .tn-l{font-family:'Lato',sans-serif;font-size:10px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:var(--earth);margin-top:6px}
+
+    /* ═══════════════════════════════════════════════════════
+       SECTORS
+    ═══════════════════════════════════════════════════════ */
+    #sectors{padding:112px 0;background:var(--deep-maroon)}
+    .sec-hdr{margin-bottom:56px}
+    .sec-hdr .tag{color:var(--light-gold)}
+    .sec-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);color:var(--cream)}
+
+    .sec-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .si{background:rgba(255,255,255,.04);padding:16px 18px;border-left:3px solid transparent;font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;color:var(--beige);transition:border-color .3s,background .3s,color .3s}
+    .si:hover{border-left-color:var(--gold);background:rgba(201,168,76,.05);color:var(--pale-gold)}
+
+    .geo-panel{}
+    .geo-panel h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);margin-bottom:28px}
+    .geo-row{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(201,168,76,.09)}
+    .geo-region{font-family:'Playfair Display',serif;font-size:14.5px;color:var(--gold);min-width:120px;padding-top:2px}
+    .geo-detail{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;color:var(--beige);line-height:1.55}
+
+    /* ═══════════════════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════════════════ */
+    #contact{padding:112px 0;background:var(--dark-maroon);position:relative;overflow:hidden}
+    #contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 50%,rgba(201,168,76,.04) 0%,transparent 68%);pointer-events:none}
+
+    .con-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:start}
+    .con-left .tag{color:var(--light-gold)}
+    .con-left h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,50px);font-weight:400;color:var(--cream);line-height:1.15;margin:8px 0 14px}
+    .con-left h2 em{font-style:italic;color:var(--light-gold)}
+    .con-sub{font-family:'EB Garamond',serif;font-size:18px;font-weight:400;line-height:1.72;color:var(--beige);margin-bottom:40px}
+
+    .con-items{display:flex;flex-direction:column;gap:18px}
+    .ci{display:flex;align-items:flex-start;gap:15px}
+    .ci-icon{width:42px;height:42px;flex-shrink:0;background:rgba(201,168,76,.09);display:flex;align-items:center;justify-content:center}
+    .ci-icon svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.5}
+    .ci-lbl{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--light-gold);margin-bottom:3px}
+    .ci-val{font-family:'Lato',sans-serif;font-size:13.5px;font-weight:300;color:var(--beige);line-height:1.6}
+
+    .con-form{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.14);padding:44px 38px}
+    .form-ttl{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:26px}
+    .fg{margin-bottom:18px}
+    .fg label{font-family:'Lato',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--beige);display:block;margin-bottom:7px}
+    .fg input,.fg textarea,.fg select{
+      width:100%;padding:11px 14px;
+      background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.18);
+      color:var(--cream);font-family:'Lato',sans-serif;font-size:13.5px;font-weight:300;
+      outline:none;transition:border-color .3s;-webkit-appearance:none;appearance:none;
+    }
+    .fg select option{background:var(--dark-maroon);color:var(--cream)}
+    .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--gold)}
+    .fg textarea{resize:vertical;min-height:95px}
+    .fsub{width:100%;padding:15px;background:var(--gold);color:var(--dark-maroon);font-family:'Lato',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s,transform .2s}
+    .fsub:hover{background:var(--light-gold);transform:translateY(-2px)}
+    #f-note{font-family:'Lato',sans-serif;font-size:11px;color:rgba(201,168,76,.5);text-align:center;margin-top:10px}
+
+    /* ═══════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════ */
+    footer{background:var(--dark-maroon);border-top:1px solid rgba(201,168,76,.13);padding:56px 0 28px}
+    .ft-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
+
+    .ft-brand .logo-w{font-size:22px;letter-spacing:5px;color:var(--gold);font-family:'Playfair Display',serif;font-weight:700;margin-bottom:2px}
+    .ft-brand .logo-s{font-family:'Lato',sans-serif;font-size:8px;font-weight:300;letter-spacing:7px;text-transform:uppercase;color:var(--beige);margin-bottom:6px}
+    .ft-brand .ft-limited{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:rgba(201,168,76,.45);margin-bottom:18px}
+    .ft-brand p{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;line-height:1.75;color:rgba(234,217,184,.55);max-width:270px}
+
+    .ft-col h4{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .ft-col ul{list-style:none}
+    .ft-col li,.ft-col a{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:300;color:rgba(234,217,184,.6);display:block;padding:5px 0;cursor:pointer;transition:color .3s}
+    .ft-col li:hover,.ft-col a:hover{color:var(--gold)}
+
+    .ft-bottom{border-top:1px solid rgba(201,168,76,.09);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .ft-copy{font-family:'Lato',sans-serif;font-size:11px;font-weight:300;color:rgba(234,217,184,.35)}
+    .ft-tag{font-family:'EB Garamond',serif;font-size:13px;font-style:italic;color:rgba(201,168,76,.45)}
+
+    /* ═══════════════════════════════════════════════════════
+       BACK TO TOP
+    ═══════════════════════════════════════════════════════ */
+    #btt{position:fixed;bottom:28px;right:28px;z-index:900;width:46px;height:46px;background:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+    #btt.on{opacity:1;pointer-events:all}
+    #btt:hover{transform:translateY(-3px)}
+    #btt svg{width:17px;height:17px;stroke:var(--dark-maroon);fill:none;stroke-width:2}
+
+    /* ═══════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════ */
+    @media(max-width:1080px){
+      .wrap{padding:0 28px}
+      .core-grid{grid-template-columns:1fr}
+      .add-grid{grid-template-columns:repeat(2,1fr)}
+      .steps-row{grid-template-columns:repeat(3,1fr);gap:28px}
+      .steps-row::before{display:none}
+      .attrs-row{grid-template-columns:repeat(3,1fr)}
+      .why-grid{grid-template-columns:repeat(2,1fr)}
+      .proj-grid{grid-template-columns:repeat(2,1fr)}
+      .testi-grid{grid-template-columns:1fr}
+      .sec-layout{grid-template-columns:1fr}
+      .con-grid{grid-template-columns:1fr}
+      .ft-grid{grid-template-columns:1fr 1fr}
+      .fnd-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:768px){
+      .wrap{padding:0 20px}
+      :root{--nav-h:64px}
+      .nav-ul{display:none}
+      .burger{display:flex}
+      .about-grid{grid-template-columns:1fr;gap:44px}
+      .stat-grid{grid-template-columns:repeat(2,1fr)}
+      .add-grid{grid-template-columns:1fr}
+      .steps-row{grid-template-columns:1fr}
+      .attrs-row{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+      .hero-stats{gap:30px}
+      .proj-grid{grid-template-columns:1fr}
+      .testi-nums{gap:36px}
+      .ft-grid{grid-template-columns:1fr}
+      .ft-bottom{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#hero" class="logo">
+      <div class="logo-w">TWYLLOS</div>
+      <div class="logo-s">Consulting Limited</div>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#method">Approach</a></li>
+      <li><a href="#founder">Leadership</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
+    </ul>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#method">Approach</a>
+  <a href="#why">Why Us</a>
+  <a href="#founder">Leadership</a>
+  <a href="#projects">Our Work</a>
+  <a href="#testi">Testimonials</a>
+  <a href="#sectors">Sectors</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<section id="hero">
+  <!-- Tessellated diamond bg -->
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dia" x="0" y="0" width="110" height="110" patternUnits="userSpaceOnUse">
+          <polygon points="55,4 106,29.5 106,80.5 55,106 4,80.5 4,29.5" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.8"/>
+          <polygon points="55,22 88,39.5 88,70.5 55,88 22,70.5 22,39.5" fill="none" stroke="rgba(201,168,76,0.03)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="1440" height="900" fill="url(#dia)"/>
+    </svg>
+  </div>
+  <!-- Right triangle accent -->
+  <div class="hero-tri" aria-hidden="true">
+    <svg viewBox="0 0 600 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="600,0 600,900 0,900" fill="rgba(74,14,26,0.45)"/>
+      <polygon points="600,0 600,900 120,900" fill="rgba(201,168,76,0.045)"/>
+      <line x1="600" y1="0" x2="0" y2="900" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+      <line x1="600" y1="0" x2="120" y2="900" stroke="rgba(201,168,76,0.1)" stroke-width="0.6"/>
+    </svg>
+  </div>
+  <!-- Gold left edge -->
+  <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--gold),var(--maroon));z-index:2"></div>
+
+  <div class="hero-body">
+    <div class="wrap">
+      <div class="hero-eyebrow reveal">Management & Strategy Consulting</div>
+      <p class="hero-limited reveal" style="transition-delay:.05s">LIMITED</p>
+      <h1 class="hero-h1 reveal" style="transition-delay:.1s">
+        Strategy.<br/>
+        <em>Efficiency.</em><br/>
+        <strong>Impact.</strong>
+      </h1>
+      <p class="hero-sub reveal" style="transition-delay:.18s">
+        A dependable vehicle for fostering value creation &amp; efficient delivery across Africa's organizational landscape.
+      </p>
+      <p class="hero-tagline reveal" style="transition-delay:.22s">
+        Project Management &nbsp;·&nbsp; Stakeholder Engagement &nbsp;·&nbsp; Policy Research &amp; Advisory &nbsp;·&nbsp; Business Development
+      </p>
+      <div class="hero-btns reveal" style="transition-delay:.28s">
+        <a href="#services" class="btn-p">
+          Explore Our Services
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-s">Start a Conversation</a>
+      </div>
+      <div class="hero-stats reveal" style="transition-delay:.36s">
+        <div><div class="hs-val">10+</div><div class="hs-lbl">Years of Excellence</div></div>
+        <div><div class="hs-val">25+</div><div class="hs-lbl">Projects Delivered</div></div>
+        <div><div class="hs-val">12+</div><div class="hs-lbl">Clients Served</div></div>
+        <div><div class="hs-val">12+</div><div class="hs-lbl">Sectors Across Africa</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>Scroll</span><div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="tag">Who We Are</p>
+        <div class="gold-bar"></div>
+        <h2 class="about-h">Built for Africa's Most Ambitious Organisations</h2>
+        <p class="about-p">Twyllos Consulting Limited is a premier management and strategy consulting firm delivering integrated advisory services across project management, stakeholder engagement, policy development, and business growth.</p>
+        <p class="about-p">Founded on the conviction that every organisation holds untapped potential, we bring together senior-level expertise and deep sectoral knowledge to unlock measurable value for clients across the public, private, and development sectors.</p>
+        <p class="about-p">With a multidisciplinary team of seasoned consultants and a rigorous, evidence-based approach, we partner with organisations at every stage of their transformation journey — from strategy design to full-scale implementation and post-project evaluation.</p>
+      </div>
+      <div class="stat-grid reveal" style="transition-delay:.2s">
+        <div class="stat-box"><div class="sb-v">10+</div><div class="sb-l">Years of Consulting Excellence</div></div>
+        <div class="stat-box"><div class="sb-v">25+</div><div class="sb-l">Projects Successfully Delivered</div></div>
+        <div class="stat-box"><div class="sb-v">12+</div><div class="sb-l">Public &amp; Private Sector Clients</div></div>
+        <div class="stat-box"><div class="sb-v">12+</div><div class="sb-l">Sectors Served Across Africa</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ═══════════════════════════════════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-hdr reveal">
+      <p class="tag">What We Do</p>
+      <div class="gold-bar c"></div>
+      <h2>Our Advisory Services</h2>
+    </div>
+
+    <!-- 4 core services -->
+    <div class="core-grid">
+      <div class="sc reveal" style="transition-delay:.04s">
+        <div class="sc-ico">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+        </div>
+        <p class="sc-tag">Delivery Excellence</p>
+        <h3 class="sc-title">Project Management</h3>
+        <p class="sc-desc">End-to-end project planning, execution, monitoring and closure using PMBoK, PRINCE2, and Agile. We ensure projects are delivered on time, within scope and on budget.</p>
+        <div class="sc-pills">
+          <span class="pill">Project Planning &amp; Scheduling</span>
+          <span class="pill">Risk &amp; Issue Management</span>
+          <span class="pill">PMO Setup &amp; Governance</span>
+          <span class="pill">Agile &amp; Hybrid Delivery</span>
+        </div>
+      </div>
+
+      <div class="sc reveal" style="transition-delay:.08s">
+        <div class="sc-ico">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="19" cy="11" r="2"/><path d="M23 21v-1a2 2 0 0 0-2-2h-2"/></svg>
+        </div>
+        <p class="sc-tag">Inclusive Process</p>
+        <h3 class="sc-title">Stakeholder Relations &amp; Development Dialogue</h3>
+        <p class="sc-desc">Strategic design and management of stakeholder engagement processes that build consensus, reduce conflict, and drive buy-in for organisational and policy change.</p>
+        <div class="sc-pills">
+          <span class="pill">Stakeholder Mapping &amp; Analysis</span>
+          <span class="pill">Consultation Design</span>
+          <span class="pill">Change Management</span>
+          <span class="pill">Communications Strategy</span>
+        </div>
+      </div>
+
+      <div class="sc reveal" style="transition-delay:.12s">
+        <div class="sc-ico">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <p class="sc-tag">Strategic Governance</p>
+        <h3 class="sc-title">Policy Research &amp; Analysis</h3>
+        <p class="sc-desc">Evidence-driven policy formulation, review, and reform advisory for governments, regulators, and development partners seeking to strengthen regulatory environments.</p>
+        <div class="sc-pills">
+          <span class="pill">Policy Analysis &amp; Research</span>
+          <span class="pill">Regulatory Framework Design</span>
+          <span class="pill">Public Sector Reforms</span>
+          <span class="pill">Implementation M&amp;E</span>
+        </div>
+      </div>
+
+      <div class="sc reveal" style="transition-delay:.16s">
+        <div class="sc-ico">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <p class="sc-tag">Growth Strategy</p>
+        <h3 class="sc-title">Business Development &amp; Organizational Strategy</h3>
+        <p class="sc-desc">Holistic business growth strategies encompassing ecosystem diagnostics, market entry, revenue diversification, institutional fundraising, and strategic partnership development.</p>
+        <div class="sc-pills">
+          <span class="pill">Market Entry &amp; Feasibility</span>
+          <span class="pill">Revenue Model Design</span>
+          <span class="pill">Grant &amp; Proposal Writing</span>
+          <span class="pill">Investment Readiness</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional services -->
+    <div class="add-grid" style="margin-top:2px">
+      <div class="ac reveal" style="transition-delay:.04s">
+        <div class="sc-ico"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="ac-title">Management Consulting</div>
+        <ul class="ac-list">
+          <li>Corporate Strategy Development</li>
+          <li>Strategic Planning Solutions</li>
+          <li>Growth Strategy &amp; Fundraising Advisory</li>
+          <li>Financial Planning &amp; Analysis</li>
+          <li>Performance Management Systems</li>
+        </ul>
+      </div>
+      <div class="ac reveal" style="transition-delay:.08s">
+        <div class="sc-ico"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="ac-title">Institutional Capacity Strengthening</div>
+        <ul class="ac-list">
+          <li>Organizational Design &amp; Restructuring</li>
+          <li>Executive Coaching &amp; Management Development</li>
+          <li>Business Process Reviews</li>
+          <li>Institutional Strengthening Programs</li>
+          <li>Custom In-House Workshops</li>
+        </ul>
+      </div>
+      <div class="ac reveal" style="transition-delay:.12s">
+        <div class="sc-ico"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="ac-title">Research &amp; M&amp;E</div>
+        <ul class="ac-list">
+          <li>Baseline Surveys, Needs Assessments &amp; Diagnostics</li>
+          <li>End-to-end Programme Evaluation</li>
+          <li>Knowledge Management Frameworks</li>
+          <li>Evidence Synthesis &amp; Reporting</li>
+          <li>Academic &amp; Think-Tank Partnerships</li>
+        </ul>
+      </div>
+      <div class="ac reveal" style="transition-delay:.16s">
+        <div class="sc-ico"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="ac-title">Digital Transformation</div>
+        <ul class="ac-list">
+          <li>Digital Strategy Development</li>
+          <li>Technology Adoption Roadmaps</li>
+          <li>Process Automation Advisory</li>
+          <li>Data Governance Frameworks</li>
+          <li>Digital Change Management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ METHODOLOGY ════════════════════════════════════════════ -->
+<section id="method">
+  <div class="wrap">
+    <div class="mth-hdr reveal">
+      <p class="tag">How We Work</p>
+      <div class="gold-bar"></div>
+      <h2>The Twyllos Engagement Framework</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step reveal" style="transition-delay:.04s">
+        <div class="step-num">01</div>
+        <div class="step-t">Diagnose</div>
+        <p class="step-d">Deep-dive discovery through stakeholder interviews, data analysis, and organisational assessments to understand root challenges.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.09s">
+        <div class="step-num">02</div>
+        <div class="step-t">Design</div>
+        <p class="step-d">Co-create bespoke, evidence-based strategies aligned to the client's goals, context, and available resources.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.14s">
+        <div class="step-num">03</div>
+        <div class="step-t">Deploy</div>
+        <p class="step-d">Systematic implementation with embedded project management, clear accountabilities, and adaptive protocols.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.19s">
+        <div class="step-num">04</div>
+        <div class="step-t">Deliver</div>
+        <p class="step-d">Tangible, measurable results with documentation, knowledge transfer, and institutional capacity reinforced.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:.24s">
+        <div class="step-num">05</div>
+        <div class="step-t">Sustain</div>
+        <p class="step-d">Post-engagement M&amp;E frameworks ensuring long-term impact, sustainability, and continuous learning.</p>
+      </div>
+    </div>
+    <div class="attrs-row">
+      <div class="attr reveal" style="transition-delay:.04s"><div class="attr-t">Client-Led</div><p class="attr-d">Co-designed with client teams for full ownership and authentic buy-in from the start.</p></div>
+      <div class="attr reveal" style="transition-delay:.09s"><div class="attr-t">Adaptive</div><p class="attr-d">Flexible enough to evolve with changing project realities and environmental shifts.</p></div>
+      <div class="attr reveal" style="transition-delay:.14s"><div class="attr-t">Results-First</div><p class="attr-d">Every phase anchored to measurable KPIs and clearly defined deliverables.</p></div>
+      <div class="attr reveal" style="transition-delay:.19s"><div class="attr-t">Knowledge-Driven</div><p class="attr-d">Built on research, global best practice, and deep sectoral expertise.</p></div>
+      <div class="attr reveal" style="transition-delay:.24s"><div class="attr-t">Inclusive</div><p class="attr-d">Stakeholder voice embedded and honoured at every stage of the process.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══════════════════════════════════════════════════ -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-hdr reveal">
+      <p class="tag">The Twyllos Difference</p>
+      <div class="gold-bar c"></div>
+      <h2>Why Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="wc reveal" style="transition-delay:.04s"><div class="wc-n">01</div><div class="wc-t">Senior-Led Delivery</div><p class="wc-d">Every engagement is led by experienced senior consultants — never delegated to juniors. Clients receive hands-on expert attention from discovery through to final delivery.</p></div>
+      <div class="wc reveal" style="transition-delay:.09s"><div class="wc-n">02</div><div class="wc-t">Sector-Deep Expertise</div><p class="wc-d">Our consultants bring deep, multi-sector experience spanning government, development finance, healthcare, energy, infrastructure, and private enterprise.</p></div>
+      <div class="wc reveal" style="transition-delay:.14s"><div class="wc-n">03</div><div class="wc-t">Collaborative Approach</div><p class="wc-d">We embed with your team rather than parachuting in. Our work is co-created, ensuring local ownership, institutional fit, and lasting organisational capability.</p></div>
+      <div class="wc reveal" style="transition-delay:.19s"><div class="wc-n">04</div><div class="wc-t">Implementation Focus</div><p class="wc-d">We go beyond reports and recommendations. Twyllos stays engaged through implementation — turning strategy into operational results and measurable impact.</p></div>
+      <div class="wc reveal" style="transition-delay:.24s"><div class="wc-n">05</div><div class="wc-t">Bespoke Solutions</div><p class="wc-d">No two clients are identical. Every engagement starts with a clean slate — rigorous diagnosis, contextual design, and solutions built specifically for you.</p></div>
+      <div class="wc reveal" style="transition-delay:.29s"><div class="wc-n">06</div><div class="wc-t">Proven Track Record</div><p class="wc-d">With experience spanning 10+ sectors, our portfolio speaks for itself. We consistently deliver on promises and uphold the highest professional standards.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER ══════════════════════════════════════════════════ -->
+<section id="founder">
+  <div class="wrap">
+    <div class="fnd-grid">
+      <div class="fnd-left reveal">
+        <div class="fnd-portrait">
+          <div class="fnd-initials-block">
+            <div class="fnd-initials">UCN</div>
+            <div class="fnd-initials-label">Managing Director</div>
+          </div>
+          <div class="fnd-badge">
+            <div class="fnd-badge-role">Founder &amp; Managing Director</div>
+            <div class="fnd-badge-name">Uchechukwu Christabel Nwabuike</div>
+          </div>
+        </div>
+        <div class="fnd-corner"></div>
+      </div>
+      <div class="fnd-right reveal" style="transition-delay:.15s">
+        <p class="tag">Founder's Profile</p>
+        <div class="gold-bar"></div>
+        <h2>Experienced. Trusted.<br/>Results-Oriented.</h2>
+        <p class="fnd-bio">
+          A seasoned management professional with 8+ years of experience designing institutional frameworks, leading complex multi-stakeholder transformation projects across the Private, Public and International Development Sectors, and translating policy ambition into operational results. Specialising in Organizational Strategy, Project Governance, and Executive Advisory, Uchechukwu brings rigorous analytical depth to every engagement. A Former senior public servant, she has led programme delivery under World Bank sponsorship, co-architected the governance model for a bilateral trade facilitation institution, and negotiated structural changes to live programme frameworks across pivotal development initiatives.
+        </p>
+        <div class="creds">
+          <div class="cred"><strong>PMP</strong> — Certified Project Management Professional, PMI (2026)</div>
+          <div class="cred"><strong>FMVA</strong> — Licensed Financial Modelling &amp; Valuation Analyst, CFI (2022)</div>
+          <div class="cred"><strong>MIAD</strong> — Master of International Affairs &amp; Diplomacy, ABU Zaria</div>
+          <div class="cred"><strong>Fellow</strong> — Africa Leadership Initiative West Africa (Aspen Leadership Institute, 2023–24)</div>
+          <div class="cred"><strong>Pioneer Fellow</strong> — Lateef Jakande Leadership Academy, Lagos State Government</div>
+          <div class="cred"><strong>Former Senior Public Servant</strong> — Special Assistant to the Governor, Lagos State</div>
+        </div>
+        <div class="fnd-passions">
+          <p>Passionate about <strong>women &amp; youth in economic development</strong>, adept at devising winning strategies for <strong>MSME Development</strong>, and proficient in leveraging <strong>high-value institutional partnerships</strong> to secure desired outcomes through targeted collaboration. At Twyllos, she architects solutions that are evidence-based, implementation-ready, and built to last.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ════════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="proj-hdr reveal">
+      <p class="tag">Our Work</p>
+      <div class="gold-bar"></div>
+      <h2>Key Projects &amp; Impact</h2>
+    </div>
+    <div class="proj-grid">
+
+      <div class="pc reveal" style="transition-delay:.04s">
+        <div class="pc-sector">Public-Private Partnership</div>
+        <div class="pc-title">Lagos State Civic Addressing System</div>
+        <div class="pc-client">Lagos State Office of e-GIS &amp; Urban Development</div>
+        <p class="pc-desc">End-to-end PPP structuring service defining the operational scope, impact focus, risk mitigation plan, stakeholder engagement strategy, M&amp;E framework and 10-year financial projections for the adoption of the first statewide digital addressing system in Nigeria.</p>
+        <div class="pc-outcome">✔ First statewide digital addressing system in Nigeria</div>
+      </div>
+
+      <div class="pc reveal" style="transition-delay:.08s">
+        <div class="pc-sector">Civic Society</div>
+        <div class="pc-title">Organizational Strategy Development &amp; Venture Planning</div>
+        <div class="pc-client">BUE Foundation</div>
+        <p class="pc-desc">End-to-end business planning encompassing organizational structuring, operational process mapping, risk analysis and stakeholder engagement strategy development; alongside a 3-year programme implementation plan.</p>
+        <div class="pc-outcome">✔ Comprehensive 3-year implementation plan delivered</div>
+      </div>
+
+      <div class="pc reveal" style="transition-delay:.12s">
+        <div class="pc-sector">Public Sector</div>
+        <div class="pc-title">Full-Range Project Management Services</div>
+        <div class="pc-client">Lagos State Office of e-GIS &amp; Urban Development</div>
+        <p class="pc-desc">Comprehensive technical support reviewing project proposals, structuring implementation, coordinating delivery and managing multi-stakeholder relationships, including the organisation of consultation and dispute resolution fora where applicable.</p>
+        <div class="pc-outcome">✔ Sustained delivery across multiple high-profile projects</div>
+      </div>
+
+      <div class="pc reveal" style="transition-delay:.16s">
+        <div class="pc-sector">Agriculture / Agro-processing</div>
+        <div class="pc-title">Business Restructuring &amp; Capital Attraction</div>
+        <div class="pc-client">Simkay Foods Limited</div>
+        <p class="pc-desc">Business restructuring and investment readiness services including business process reengineering, tech integration, regulatory compliance audit, and development of a 5-year plan to scale operations for global capital attraction.</p>
+        <div class="pc-outcome">✔ Positioned for global capital attraction</div>
+      </div>
+
+      <div class="pc reveal" style="transition-delay:.2s">
+        <div class="pc-sector">Real Estate</div>
+        <div class="pc-title">Strategic Business Restructuring &amp; Capital Attraction</div>
+        <div class="pc-client">Baranest Homes</div>
+        <p class="pc-desc">Full organisational diagnostics and restructuring for a 50-staff organisation across 5 business units; alongside investment-readiness and grant application management services, culminating in a new 3-year strategic plan.</p>
+        <div class="pc-outcome">✔ $100,000 secured from African Development Bank (AfDB)</div>
+      </div>
+
+      <div class="pc reveal" style="transition-delay:.24s">
+        <div class="pc-sector">Educational Services</div>
+        <div class="pc-title">Business Setup &amp; Office Establishment</div>
+        <div class="pc-client">Brain Hive Consults Limited</div>
+        <p class="pc-desc">Design and operationalisation of an educational consulting service establishment, including setup of required systems, tools and templates, as well as training for management staff in operations management and service delivery standards.</p>
+        <div class="pc-outcome">✔ Fully operational consulting practice established</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ════════════════════════════════════════════ -->
+<section id="testi">
+  <div class="wrap">
+    <div class="testi-hdr reveal">
+      <p class="tag">Client Voices</p>
+      <div class="gold-bar c"></div>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tc reveal" style="transition-delay:.04s">
+        <div class="tc-qm">"</div>
+        <p class="tc-body">Twyllos Consulting transformed how we operate entirely, putting a definite structure in place that tied up our different areas of engagement in the Agricultural space. Their approach was deeply practical, enhancing our overall efficiency and impact.</p>
+        <div class="tc-div"></div>
+        <div class="tc-who">Founder</div>
+        <div class="tc-org">Simkay Foods Limited &nbsp;·&nbsp; 2020</div>
+      </div>
+      <div class="tc reveal" style="transition-delay:.09s">
+        <div class="tc-qm">"</div>
+        <p class="tc-body">The quality of Twyllos' delivery was outstanding. They handled a multi-faceted process with exceptional professionalism and delivered outcomes that far exceeded our expectations.</p>
+        <div class="tc-div"></div>
+        <div class="tc-who">Managing Director</div>
+        <div class="tc-org">Brainhive Consults &nbsp;·&nbsp; 2023</div>
+      </div>
+      <div class="tc reveal" style="transition-delay:.14s">
+        <div class="tc-qm">"</div>
+        <p class="tc-body">What distinguished Twyllos was their genuine commitment to understanding our organisation before proposing solutions. The strategic plan they developed has become our compass for the next five years.</p>
+        <div class="tc-div"></div>
+        <div class="tc-who">Chief Executive Officer</div>
+        <div class="tc-org">Baranest Homes &nbsp;·&nbsp; 2026</div>
+      </div>
+    </div>
+    <div class="testi-nums reveal">
+      <div><div class="tn-v">100%</div><div class="tn-l">Client Satisfaction Rate</div></div>
+      <div><div class="tn-v">92</div><div class="tn-l">Net Promoter Score</div></div>
+      <div><div class="tn-v">85%</div><div class="tn-l">Repeat Engagement Rate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTORS ═════════════════════════════════════════════════ -->
+<section id="sectors">
+  <div class="wrap">
+    <div class="sec-hdr reveal">
+      <p class="tag">Where We Operate</p>
+      <div class="gold-bar"></div>
+      <h2>Sectors &amp; Global Reach</h2>
+    </div>
+    <div class="sec-layout">
+      <div class="sec-grid reveal">
+        <div class="si">Government &amp; Public Administration</div>
+        <div class="si">Health &amp; Social Protection</div>
+        <div class="si">Energy &amp; Natural Resources</div>
+        <div class="si">Financial Services &amp; Banking</div>
+        <div class="si">Agriculture &amp; Food Systems</div>
+        <div class="si">Infrastructure &amp; Urban Development</div>
+        <div class="si">Education &amp; Human Capital</div>
+        <div class="si">International Development &amp; NGOs</div>
+        <div class="si">Telecommunications &amp; ICT</div>
+        <div class="si">Manufacturing &amp; Industry</div>
+        <div class="si">Trade &amp; Commerce</div>
+        <div class="si">Environment &amp; Climate Policy</div>
+      </div>
+      <div class="geo-panel reveal" style="transition-delay:.2s">
+        <h3>Geographic Presence</h3>
+        <div class="geo-row">
+          <div class="geo-region">Abuja</div>
+          <div class="geo-detail">Headquarters — Cadastral Zone CO1, Idu Industrial Area, F.C.T.</div>
+        </div>
+        <div class="geo-row">
+          <div class="geo-region">Lagos</div>
+          <div class="geo-detail">Branch Office</div>
+        </div>
+        <div class="geo-row">
+          <div class="geo-region">West Africa</div>
+          <div class="geo-detail">Ghana, Senegal, Côte d'Ivoire</div>
+        </div>
+        <div class="geo-row">
+          <div class="geo-region">East Africa</div>
+          <div class="geo-detail">Kenya, Ethiopia, Rwanda</div>
+        </div>
+        <div class="geo-row">
+          <div class="geo-region">International</div>
+          <div class="geo-detail">UK, UAE &amp; US — Partner Network</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ═════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="con-grid">
+      <div class="con-left reveal">
+        <p class="tag">Get In Touch</p>
+        <div class="gold-bar"></div>
+        <h2>Let's Achieve<br/><em>Greatness Together.</em></h2>
+        <p class="con-sub">Ready to level up as an organisation? We are available to discuss your unique needs. Reach out today — the conversation costs nothing.</p>
+        <div class="con-items">
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="ci-lbl">Phone</div><div class="ci-val">+234 (0) 810 452 3520</div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="ci-lbl">Email</div><div class="ci-val">info@twyllosconsulting.com</div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-lbl">Address</div><div class="ci-val">House 3, Plot 54, Cadastral Zone CO1<br/>Idu Industrial Area, F.C.T., Nigeria</div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+            <div><div class="ci-lbl">Digital</div><div class="ci-val">www.twyllosconsulting.com<br/>LinkedIn: /twyllos-consulting</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="con-form reveal" style="transition-delay:.2s">
+        <div class="form-ttl">Send Us a Message</div>
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+        <div class="fg"><label>Organisation</label><input type="text" placeholder="Company / Institution"/></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="fg">
+          <label>Service Interest</label>
+          <select>
+            <option value="">Select a service area</option>
+            <option>Project Management</option>
+            <option>Stakeholder Relations &amp; Development Dialogue</option>
+            <option>Policy Research &amp; Analysis</option>
+            <option>Business Development &amp; Organizational Strategy</option>
+            <option>Management Consulting</option>
+            <option>Institutional Capacity Strengthening</option>
+            <option>Research &amp; M&amp;E</option>
+            <option>Digital Transformation</option>
+            <option>Other / Multiple Services</option>
+          </select>
+        </div>
+        <div class="fg"><label>Your Message</label><textarea placeholder="Tell us about your organisation and what you're looking to achieve..."></textarea></div>
+        <button class="fsub" onclick="handleSubmit(event)">Send Message →</button>
+        <p id="f-note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="logo-w">TWYLLOS</div>
+        <div class="logo-s">Consulting</div>
+        <div class="ft-limited">Limited</div>
+        <p>A dependable vehicle for fostering value creation and efficient delivery across Africa's organizational landscape. Strategy · Efficiency · Impact.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Services</h4>
+        <ul>
+          <li onclick="go('services')">Project Management</li>
+          <li onclick="go('services')">Stakeholder Engagement</li>
+          <li onclick="go('services')">Policy Research &amp; Analysis</li>
+          <li onclick="go('services')">Business Development</li>
+          <li onclick="go('services')">Capacity Strengthening</li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul>
+          <li onclick="go('about')">About Us</li>
+          <li onclick="go('method')">Our Approach</li>
+          <li onclick="go('founder')">Leadership</li>
+          <li onclick="go('projects')">Our Work</li>
+          <li onclick="go('sectors')">Sectors</li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@twyllosconsulting.com">info@twyllosconsulting.com</a>
+        <a href="tel:+2348104523520">+234 810 452 3520</a>
+        <a>Idu Industrial Area, Abuja (HQ)</a>
+        <a>Lagos Branch Office</a>
+        <a href="https://linkedin.com/company/twyllos-consulting" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2025 Twyllos Consulting Limited. All rights reserved. | www.twyllosconsulting.com</p>
+      <p class="ft-tag">Strategy · Efficiency · Impact</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<div id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('s', y > 55);
+    btt.classList.toggle('on', y > 480);
+  }, {passive:true});
+
+  // Burger
+  const burger = document.getElementById('burger');
+  const mob = document.getElementById('mob');
+  burger.addEventListener('click', () => mob.classList.toggle('o'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('o')));
+
+  // Scroll helper
+  function go(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth'}) }
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target) } });
+  }, {threshold:0.1, rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Hero reveals — trigger immediately
+  document.querySelectorAll('#hero .reveal').forEach((el,i) => {
+    setTimeout(() => el.classList.add('on'), 80 + i * 100);
+  });
+
+  // Form submit
+  function handleSubmit(e){
+    e.preventDefault();
+    const n = document.getElementById('f-note');
+    n.style.color='var(--light-gold)';
+    n.textContent='✔ Thank you — we will be in touch within 24 hours.';
+  }
+
+  // Active nav highlight
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-ul a');
+  new IntersectionObserver(es => {
+    es.forEach(e => {
+      if(e.isIntersecting){
+        links.forEach(l => {
+          l.style.color = l.getAttribute('href')==='#'+e.target.id ? 'var(--gold)' : '';
+        });
+      }
+    });
+  },{threshold:0.4}).observe !== undefined && secs.forEach(s =>
+    new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting) links.forEach(l=>{ l.style.color=l.getAttribute('href')==='#'+e.target.id?'var(--gold)':'' }) })
+    },{threshold:0.4}).observe(s)
+  );
+</script>
+</body>
+</html>
